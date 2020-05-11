@@ -11,5 +11,5 @@ echo $FREESURFER_LICENSE > license.txt
 
 #TODO - if user specify their own wm_mask, skip this
 if [ ! -f aparc+aseg.nii.gz ]; then
-    singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer-mini:6.0.1 ./create_wm_mask.sh
+    singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer-mini:6.0.1 ./run.sh
 fi
