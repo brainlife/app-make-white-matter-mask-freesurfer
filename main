@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=1,vmem=16g,walltime=00:10:00
+#PBS -N app-make-white-matter-mask-freesurfer
+#PBS -V
+
+set -e
+set -x
+
+[ -z "$FREESURFER_LICENSE" ] && echo "Please set FREESURFER_LICENSE in .bashrc" && exit 1;
+echo $FREESURFER_LICENSE > license.txt
+
+#TODO - if user specify their own wm_mask, skip this
+if [ ! -f aparc+aseg.nii.gz ]; then
+    singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer-mini:6.0.1 ./create_wm_mask.sh
+fi
