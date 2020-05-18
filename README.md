@@ -1,7 +1,7 @@
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-brainlife.app.340-blue.svg)](https://doi.org/10.25663/brainlife.app.340)
 
-# Make white matter mask in dwi space from Freesurfer 
+# Make white matter mask in dMRI space from Freesurfer 
 
 This app will generate a white matter mask from Freesurfer subcortical segmentation using Freesurfer. This mask is registered to the DWI image. This takes a Freesurfer datatype and a DWI datatype as input and outputs a mask datatype of the white matter. 
 
