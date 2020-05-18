@@ -42,9 +42,9 @@ You can submit this App online at [https://doi.org/10.25663/brainlife.app.340](h
 ```json 
 {
    "dwi":    "testdata/dwi/dwi.nii.gz",
-    "bvals":    "testdata/dwi/dwi.bvals",
-    "bvecs":    "tesdata/dwi/dwi.bvecs",
-    "freesurfer":    "testdata/freesurfer/output/"
+   "bvals":    "testdata/dwi/dwi.bvals",
+   "bvecs":    "tesdata/dwi/dwi.bvecs",
+   "freesurfer":    "testdata/freesurfer/output/"
 } 
 ``` 
 
