@@ -21,11 +21,15 @@ This app will generate a white matter mask from Freesurfer subcortical segmentat
 [![NSF-IIS-1912270](https://img.shields.io/badge/NSF_IIS-1912270-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1912270)
 [![NIH-NIBIB-R01EB029272](https://img.shields.io/badge/NIH_NIBIB-R01EB029272-green.svg)](https://grantome.com/grant/NIH/R01-EB029272-01)
 
-### Citations 
+### Citations
 
-Please cite the following articles when publishing papers that used data, code or other resources created by the brainlife.io community. 
+We kindly ask that you cite the following articles when publishing papers and code using this code.
 
- 
+1. Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). https://doi.org/10.1038/s41597-019-0073-y
+
+2. Dale, A.M., Fischl, B., Sereno, M.I., 1999. Cortical surface-based analysis. I. Segmentation and surface reconstruction. Neuroimage 9, 179-194. 
+
+#### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
 
 ## Running the App 
 
@@ -75,9 +79,11 @@ The secondary output of this app is `product.json`. This file allows web interfa
 
 ### Dependencies 
 
-This App requires the following libraries when run locally. 
+This App only requires [singularity](https://www.sylabs.io/singularity/) to run. If you don't have singularity, you will need to install following dependencies.   
 
 - Freesurfer: https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
 - FSL: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation
 - jsonlab: https://github.com/fangq/jsonlab
 - singularity: https://singularity.lbl.gov/quickstart
+
+#### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
