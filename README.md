@@ -3,6 +3,31 @@
 
 # Make white matter mask in dMRI space from Freesurfer 
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Creates a white matter mask in DWI space from a FreeSurfer aparc+aseg segmentation, using the aligned DWI of a dtiInit output as reference, with FreeSurfer mri_label2vol and mri_binarize.**
+
+Same as the DWI variant, but takes the reference image from a dtiInit output (files.alignedDwRaw in dt6.json): aparc+aseg.mgz is resampled onto that grid by header and white matter, cerebellar white matter, corpus callosum, brainstem and subcortical labels are binarized. The FreeSurfer anatomy must be in the same ACPC space as the dtiInit-aligned DWI. Requires a FreeSurfer license.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.341](https://doi.org/10.25663/brainlife.app.341)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `freesurfer` | `neuro/freesurfer` | yes | FreeSurfer recon-all output; mri/aparc+aseg.mgz is used. |
+| `dtiinit` | `neuro/dtiinit` | yes | dtiInit output directory; its aligned DWI (dt6.json files.alignedDwRaw) defines the output mask space. Must be aligned with the FreeSurfer anatomy; no registration is computed. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `mask` | `neuro/mask` | Binary mask in DWI voxel space covering FreeSurfer aparc+aseg white matter, cerebellar white matter, corpus callosum, brainstem and subcortical structures (thalamus, caudate, putamen, pallidum, hippocampus, amygdala, ventral DC). |
+
+Runtime: container `brainlife/freesurfer-mini:6.0.1`; 1 CPUs; 16 GB memory; 0.17 h walltime; needs `FREESURFER_LICENSE`.
+
+Please cite:
+- Dale AM, Fischl B, Sereno MI. Cortical surface-based analysis. I. Segmentation and surface reconstruction. NeuroImage 9:179-194 (1999).
+- Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 This app will generate a white matter mask from Freesurfer subcortical segmentation using Freesurfer. This mask is registered to the DWI image. This takes a Freesurfer datatype and a DWI datatype as input and outputs a mask datatype of the white matter. 
 
 ### Authors 
